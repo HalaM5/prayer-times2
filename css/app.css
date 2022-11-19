@@ -1,0 +1,262 @@
+/*There are one father container and 5 sons div*/
+/*Use grid area to mdesign page and make responsive*/
+/*div class in html: container city prayers click display currentTimeDate*/
+/* span class in js: align for all prayer times choose to align time */
+
+
+
+ 
+ .container{
+     background-color: aqua;
+     background-image:radial-gradient(farthest-side at 20% 2%, rgb(135, 215, 115), rgb(221, 209, 204), rgb(139, 221, 136));
+     display: grid;
+     grid-template-columns:10px 1fr 1fr 1fr 10px   ;/*(2colum,size)*/
+     grid-auto-rows: minmax(150px, auto);/*if there infinite number of rows*/
+     /*grid-column-gap: 10px;
+     grid-row-gap: 10px;*/
+     grid-gap: 10px;
+     grid-template-areas: 
+     "f eng  h arab g" /*h is here for place the position only it isnot present in code */
+     "date date date date g"
+     "chosecity chosecity chosecity chosecity g"
+     "choseprayer choseprayer choseprayer choseprayer g"
+     "but but but but g"
+     "result result result result g"
+     "img img img img img"
+     "p footer footer footer footer"
+     ;
+     /*justify-items: center ;/*don't use it ,it will bring son div in center and not text only */
+     align-items: center;
+     /*text-align-last: center;/*content  in each div become in center*/
+ }
+ 
+ .alldiv{/*must give background-color to see effect of grid-gap*/
+    /* background-color: aqua;*/
+     text-align: center;
+     /*font-size: 25px;*/
+ 
+ }
+ 
+ img{
+     grid-area: img;
+     height: 500px;
+     width: 500px;
+ }
+ .line{
+     grid-area: line;
+     height: 0;
+     border: 1px grey solid;
+     
+ }
+ .cpd{
+     font-size: 30px;
+     
+ 
+ }
+ 
+ 
+ .ar{/*أوقات الصلاة عنوان*/
+     display: grid;/* make juistify-items working by display :grid*/
+     justify-items: right;
+     font-size: 20px;
+     grid-area: arab;/*for name area to use above in grid-template-area*/
+ }
+ 
+ .en{
+     display: grid;
+     justify-items: left;
+     grid-area: eng;
+     font-size: 20px;
+ 
+ }
+ 
+ .city {
+     grid-area: chosecity;
+ 
+ 
+ }
+ 
+ .prayers {
+     grid-area: choseprayer;
+ 
+ 
+ 
+ }
+
+ 
+
+ 
+ .click {
+     grid-area: but;
+     display: grid;
+     justify-items:center;
+     
+ 
+ 
+ }
+ 
+ footer{
+     grid-area: footer;
+     font-size: x-large;
+ }
+ 
+ .display{
+     grid-area: result;
+     display: grid;
+     grid-auto-rows: minmax(200px, auto);
+     grid-template-areas:
+     "All"
+     
+     ;
+     grid-gap: 10px;
+     justify-content: center;
+     text-align: left;
+ 
+ 
+ 
+ 
+ } 
+ 
+ 
+ .dispAll{
+     grid-area: All;
+     color:blue;
+     display: grid;
+     width:200px;
+     grid-auto-rows: minmax(20px,auto);
+     grid-template-areas: 
+     "Fajr num";
+     
+     ;
+ 
+ }
+ .d{
+     grid-area: d;
+ 
+ }
+ 
+ .dd{
+     grid-area: dd;
+     color:brown;
+ 
+ }
+ 
+ #prayerTimes{
+     color:blue
+ }
+ 
+ .align{
+     color:brown;
+    /* grid-area: num;*/
+     text-align:right;
+ 
+ }
+ .currentTimeDate{
+     grid-area: date;
+     color: rgb(18, 2, 32);
+     font-size:x-large;
+ 
+ 
+ }
+ .currentTimeDate::after{
+     content: "prayer time in some cities in Egypt";
+ 
+     
+ 
+ }
+ 
+ 
+ #btn{
+     width: 100px;
+     height: 50px;
+     font-size: 25px;
+    
+ }
+ 
+ button:hover{
+     border-radius: 50px;
+     cursor: pointer;
+     border: none;
+     box-shadow: 7px 10px 10px rgb(118, 56, 56)  ;
+     background-color: rgb(117, 175, 184);
+     /*transition: 3s;*/
+ 
+ }
+ 
+ button:active{
+     /*to make button move in opposite direction on y axis*/
+     transform: translateY(25px)   translateY(-20px);
+     box-shadow: 10px 4px 20px chocolate;
+     color:aqua;
+ }
+ 
+ 
+ #prayer, #Egcity{
+     font-size: 19px;
+ 
+ 
+ 
+ }
+ 
+ #Egcity:hover{
+     border: 5px red solid;
+     font-size: 19px;
+ 
+ 
+ 
+ }
+ 
+ #prayer:hover{
+     border: 5px red solid;
+     font-size: 19px;
+ 
+ 
+ 
+ }
+ /*adjust label and select of city and prayer chooselist*/
+ .city , .prayers{
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);/*to make 2 inputs adjusted above each othere*/
+     grid-template-areas: 
+     "label input h"
+     "label input h"
+     ;
+ }
+ 
+ label[for="Egcity"] , label[for="prayer"]{
+     grid-area: label;
+ }
+ 
+ #Egcity , #prayer{
+     grid-area: input;
+     
+ }
+ 
+ @media screen and (max-width: 600px){
+     body{
+         background-color: black;
+     }
+     .container{
+         background-color: rgb(0, 255, 110);
+         display: grid;
+         grid-template-columns:100px 1fr 10px   ;/*(2colum,size)*/
+         grid-auto-rows: minmax(150px, auto);/*if there infinite number of rows*/
+         /*grid-column-gap: 10px;
+         grid-row-gap: 10px;*/
+         grid-gap: 10px;
+         grid-template-areas: 
+         " eng arab g" /*h is here for place the position only it isnot present in code */
+         "line line line"
+ 
+         " date date date "
+         " chosecity chosecity chosecity "
+         " choseprayer choseprayer choseprayer "
+         " but but but "
+         " result result result ";
+         /*justify-items: center ;/*don't use it ,it will bring son div in center and not text only */
+         align-items: center;
+         /*text-align-last: center;/*content  in each div become in center*/
+     }
+ }
+ 
+ 

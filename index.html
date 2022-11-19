@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--<link href="css/app.css" rel="stylesheet">-->
+    <link href="css/app.css" rel="stylesheet">
+
+</head>
+<body>
+    
+    <div class="container">
+        <div class="alldiv en">
+            <h1>Prayer time</h1> 
+        </div>
+        <div class="alldiv ar">
+            <h1>أوقات الصلاة  </h1>
+        </div>
+        <div class="line"></div>
+        <div class="currentTimeDate alldiv">
+            <span >Today</span>
+            <span id="date"></span><br >
+            <span ></span>
+            <span id="time"></span>
+            <div id="tim" style="color:red"></div>
+        </div>
+
+        <div class="city alldiv cpd" >
+            <label for="Egcity">city</label>
+            <select id="Egcity" name="city">
+                <option value="Alexandria">Alexandria</option>
+                <option value="Ismaillia">Ismaillia</option>
+                <option value="Kafr al-Sheikh"> Kafr al-Sheikh</option>
+                <option value="Aswan">Aswan</option>
+                <option value="Asyut">Asyut</option>
+                <option value="luxor">luxor</option>
+                <option value="New Valley"> New Valley</option>
+                <option value="Beni suef"> Beni suef</option>
+                <option value="Red sea">Red sea</option>
+                <option value="Giza">Giza</option>
+                <option value="Dakahlia">Dakahlia</option>
+                <option value="Damietta">Damietta</option>
+                <option value="Sohag">Sohag</option>
+                <option value="Suez">Suez</option>
+                <option value="Sharqia">Sharqia</option>
+                <option value="Fayoum">Fayoum</option>
+                <option value="Cairo">Cairo</option>
+                <option value="Qalyub">Qalyub</option>
+                <option value="Qena">Qena</option>
+                <option value="Marsa Matruh">Marsa Matruh</option>
+                <option value="Minya">Minya</option>
+            </select>
+        </div>
+        
+        <div class="prayers alldiv cpd" >
+            <label for="prayer">prayer time</label>
+            <select id="prayer">
+                <option value="Fajr">Fajr</option>
+                <option value="Dhuhr">Dhuhr</option>
+                <option value="Asr">Asr</option>
+                <option value="Maghrib">Maghrib</option>
+                <option value="Isha">Isha</option>
+                <option value="Sunrise">Sunrise</option>
+                <option value="All">All prayer times</option>
+            </select>
+        </div>
+
+        <div class="click alldiv cpd" >
+            <button id="btn">ok</button>
+        </div>
+
+        <div class="display alldiv cpd" >
+            <span id="prayerTimes"></span>
+        </div>
+        
+        <footer>
+            <p>Implemented by Hala Mahmoud </p>
+        </footer>
+
+    </div>
+</body>
+<script src="js/app.js" type="text/javascript"></script>
+</html>
